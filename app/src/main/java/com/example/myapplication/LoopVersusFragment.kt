@@ -7,18 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class LoopTestFragment : Fragment() {
-
-    private var _binding : FramentLoopTestBidning? = null
-    private val binding get() = _binding!!
-
+class LoopVersusFragment : Fragment() {
+    private var _binding : FragmentLoopVersusBinding? = null
+    private binding get() = _binding!!
     private val sharedViewModel : AstronautViewModel by activitiViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {}
-
-        requireActivity().onBackPressedDispatcher.addCallback(this) {showReturnDialog()}
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            showReturnDialog()
+        }
     }
 
     override fun onCreateView(
@@ -26,27 +25,29 @@ class LoopTestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLoopTestBinding.inflate(inflater, container, false)
+        _binding = FragmentLoopVersusBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sharedViewModel.reinitializeData(false)
+        sharedViewModel.reinitializeData(true)
+        sharedViewModel.onTimerEnd = ::onFinish
         binding?.apply {
-            viewLifecycleOwner = viewLifecycleOwner
+            lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
         }
         updatePlateOnScreen()
         binding.answer1.setOnClickListener {
-            onAnswerSelected(1)
+            onAnswerSeleted(1)
         }
         binding.answer2.setOnClickListener {
-            onAnswerSelected(2)
+            onAnswerSeleted(2)
         }
         binding.answer3.setOnClickListener {
-            onAnswerSelected(3)
+            onAnswerSeleted(3)
         }
+        sharedViewModel.startCountdown()
     }
 
     override fun onDestroyView() {
@@ -54,14 +55,19 @@ class LoopTestFragment : Fragment() {
         _binding = null
     }
 
-    private fun onAnswerSelected(answer: Int) {
-        sharedViewModel.checkedAnswerWrong(answer)
+    private fun onAnswerSeleted(answer: Int) {
+        sharedViewModel.checkedAnswer(answer)
         if(sharedViewModel.currentAnswerCount.value == sharedViewModel.MAX_NO_OF_PLATES) {
-            findNavController().navigate(R.id.action_loopTestFragment_to_resultsTestFragment)
-        } else {
+            onFinish()
+        } else{
             sharedViewModel.getNextPlate()
             updatePlateOnScreen()
         }
+    }
+
+    private fun onFinish() {
+        sharedViewModel.timeSubtraction()
+        findNavController().navigate(R.id.action_loopVersusFragment_to_resultsVersusFragment)
     }
 
     private fun updatePlateOnScreen() {
@@ -79,11 +85,12 @@ class LoopTestFragment : Fragment() {
             .setMessage(getString(R.string.return_dialog_detail))
             .setCancelable(false)
             .setPositiveButton(getString(R.string.confirm_btn)) { _, _ ->
-                findNavController().navigate(R.id.action_loopTestFragment_to_chooseModeFragment)
+                findNavController().navigate(R.id.action_loopVersusFragment_to_chooseModeFragment)
             }
             .setNegativeButton(getString(R.string.cancel_btn)) { _, _ ->
 
             }
             .show()
     }
+
 }
