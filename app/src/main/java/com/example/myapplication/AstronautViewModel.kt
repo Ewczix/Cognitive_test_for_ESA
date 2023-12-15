@@ -117,7 +117,7 @@ class AstronautViewModel : ViewModel() {
     }
 
     fun updateLeaderboard() {
-        viewModelScope.launch{
+        viewModelScope.launch {
             val response = LearboardApi.retrofitService.addRecord(ResponseScore(_displayedName.value.toString(), _currentScore.value!!.toFloat()))
 
             if(response.isSuccessful) {

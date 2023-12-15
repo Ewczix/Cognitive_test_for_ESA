@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Cognitive tests for astronaut recruitment</string>
+    <string name="start">Start</string>
+    <string name="test">Test</string>
+    <string name="versus">Versus</string>
+    <string name="return_button">Return</string>
+    <string name="submit">Submit</string>
+    <string name="choose_mode">Choose mode</string>
+    <string name="test_description">Check your cognitive abilities! At the end of the test you will receive feedback if you will be a good candidate for an astronaut.</string>
+    <string name="versus_description">Challenge your friends and try yourself in cognitive test for astronaut candidates. </string>
+    <string name="displayed_name">Displayed name</string>
+    <string name="leaderboard_description">You can check your score on leaderboard now! Type your name and click submit button.</string>
+    <string name="score">Score</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus sollicitudin, nunc a molestie lobortis, purus sapien convallis nibh, eu finibus augue lacus id libero.</string>
+    <string name="correct_answers">Correct answers</string>
+    <string name="question">Choose your answer</string>
+    <string name="leaderboard_title">Leaderboard</string>
+    <string name="result_caption">Your result</string>
+    <string name="return_dialog">Return to main menu?</string>
+    <string name="return_dialog_detail">Your progress will not be saved.</string>
+    <string name="confirm_btn">Confirm</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="progress">Progress: %s / %s</string>
+    <string name="slash">%s / %s</string>
 </resources>

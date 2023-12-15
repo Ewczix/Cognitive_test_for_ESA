@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.myapplication.databinding.ActivitiMainBinding
 import java.security.AccessController
 
 @SuppressLint("StaticFieldLeak")
