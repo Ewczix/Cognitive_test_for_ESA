@@ -70,7 +70,7 @@ class LoopTestFragment : Fragment() {
 
     private fun updatePlateOnScreen() {
         binding.plateImage.setImageResource(sharedViewModel.currentPlate.value!!.imageResource)
-        val answerOrder = listOf<Int>(0, 1, 2).shuffled()
+        val answerOrder = listOf<Int>(0, 1, 2)
         sharedViewModel.setOrder(answerOrder)
         binding.answer1.text = sharedViewModel.currentPlate.value!!.answers[answerOrder[0]].answer
         binding.answer2.text = sharedViewModel.currentPlate.value!!.answers[answerOrder[1]].answer
