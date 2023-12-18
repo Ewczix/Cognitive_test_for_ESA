@@ -4,7 +4,7 @@ import com.example.myapplication.R
 
 class Datasource {
 
-    fun loadPlates(): MutableList<AstronautTest>{
+    fun loadPlates(): MutableList<AstronautTest> {
         return mutableListOf<AstronautTest>(
             AstronautTest(1, R.drawable.plate1 , listOf<AstronautAnswer>(
                 AstronautAnswer("A", answerMeaning.CORRECT),
@@ -186,6 +186,7 @@ class Datasource {
                 AstronautAnswer("B",answerMeaning.MATH),
                 AstronautAnswer("C", answerMeaning.CORRECT)
             )),
+        )
 
     }
 }

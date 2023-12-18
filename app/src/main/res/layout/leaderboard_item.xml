@@ -8,7 +8,7 @@
             type="com.example.myapplication.AstronautViewModel" />
         <variable
             name="item"
-            type="com.example.myapplication.AstronautViewModel" />
+            type="com.example.myapplication.network.LeaderboardScore" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

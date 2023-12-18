@@ -4,7 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.databinding.FragmentLeaderboardBinding
 
 class LeaderboardFragment : Fragment() {
 
@@ -30,15 +34,15 @@ class LeaderboardFragment : Fragment() {
         _binding = FragmentLeaderboardBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        viewModel.updateLeaderboard()
-        binding.recyclerView.adapter = LeaderboardAdapter
+        //viewModel.updateLeaderboard()
+        binding.recyclerView.adapter = LeaderboardAdapter()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.returnToMenu.setOnClickListener {
-            findNavController().navigate(R.id.action_leadervoardFragment_toChoodeModeFragment)
+            findNavController().navigate(R.id.action_leaderboardFragment_to_chooseModeFragment)
         }
     }
 

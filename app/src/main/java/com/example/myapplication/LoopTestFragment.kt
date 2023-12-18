@@ -4,15 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.databinding.FragmentLoopTestBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LoopTestFragment : Fragment() {
 
-    private var _binding : FramentLoopTestBidning? = null
+    private var _binding : FragmentLoopTestBinding? = null
     private val binding get() = _binding!!
 
-    private val sharedViewModel : AstronautViewModel by activitiViewModels()
+    private val sharedViewModel : AstronautViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +38,7 @@ class LoopTestFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sharedViewModel.reinitializeData(false)
         binding?.apply {
-            viewLifecycleOwner = viewLifecycleOwner
+            lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
         }
         updatePlateOnScreen()

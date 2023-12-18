@@ -41,7 +41,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/score_divider"
             android:layout_marginTop="10dp"
-            android:text="@{@string/slash(viewModel.colorBlindnessScores[0], viewModel.MAX_NO_OF_PLATES)}"
+            android:text="@{@string/slash(viewModel.wrongScores[0], viewModel.MAX_NO_OF_PLATES)}"
             android:textAppearance="@style/TextAppearance.Material3.DisplayLarge"/>
         <ImageView
             android:layout_width="250dp"

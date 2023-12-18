@@ -29,7 +29,7 @@
         app:singleSelection="true"
         app:selectionRequired="true"
         app:checkedButton="@id/test_option"
-        android:backgroundTint="@color/orange_200">
+        android:backgroundTint="@color/black">
         <Button
             android:id="@+id/test_option"
             style="?attr/materialButtonOutlinedStyle"

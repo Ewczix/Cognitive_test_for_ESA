@@ -4,13 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.example.myapplication.databinding.FragmentLoopVersusBinding
 
 class LoopVersusFragment : Fragment() {
     private var _binding : FragmentLoopVersusBinding? = null
-    private binding get() = _binding!!
-    private val sharedViewModel : AstronautViewModel by activitiViewModels()
+    private val binding get() = _binding!!
+    private val sharedViewModel : AstronautViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
