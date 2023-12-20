@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Cognitive tests for astronaut recruitment</string>
+    <string name="app_name">Cognitive tests for astronaut recruitment process</string>
     <string name="start">Start</string>
     <string name="test">Test</string>
     <string name="versus">Versus</string>
     <string name="return_button">Return</string>
     <string name="submit">Submit</string>
     <string name="choose_mode">Choose mode</string>
-    <string name="test_description">Check your cognitive abilities! At the end of the test you will receive feedback if you will be a good candidate for an astronaut.</string>
-    <string name="versus_description">Challenge your friends and try yourself in cognitive test for astronaut candidates. </string>
+    <string name="test_description">Check your cognitive abilities! At the end of the test, you will receive feedback to determine if you would be a suitable candidate for an astronaut.</string>
+    <string name="versus_description">Challenge your friends and try yourself in cognitive tests for astronaut recruitment process. </string>
     <string name="displayed_name">Displayed name</string>
     <string name="leaderboard_description">You can check your score on leaderboard now! Type your name and click submit button.</string>
     <string name="score">Score</string>

@@ -53,9 +53,9 @@ class ResultsTestFragment : Fragment() {
         val mathScore = viewModel.wrongScores.value!![4]
 
         resultString += ("Visual: $visualScore")
-        resultString += ("Technic: $technicScore")
-        resultString += ("English: $englishScore")
-        resultString += ("Math: $mathScore")
+        resultString += (" Technic: $technicScore")
+        resultString += (" English: $englishScore")
+        resultString += (" Math: $mathScore")
 
         return resultString
     }
