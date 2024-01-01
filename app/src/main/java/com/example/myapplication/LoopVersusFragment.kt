@@ -43,13 +43,13 @@ class LoopVersusFragment : Fragment() {
         }
         updatePlateOnScreen()
         binding.answer1.setOnClickListener {
-            onAnswerSeleted(1)
+            onAnswerSelected(1)
         }
         binding.answer2.setOnClickListener {
-            onAnswerSeleted(2)
+            onAnswerSelected(2)
         }
         binding.answer3.setOnClickListener {
-            onAnswerSeleted(3)
+            onAnswerSelected(3)
         }
         sharedViewModel.startCountdown()
     }
@@ -59,11 +59,11 @@ class LoopVersusFragment : Fragment() {
         _binding = null
     }
 
-    private fun onAnswerSeleted(answer: Int) {
+    private fun onAnswerSelected(answer: Int) {
         sharedViewModel.checkedAnswer(answer)
         if(sharedViewModel.currentAnswerCount.value == sharedViewModel.MAX_NO_OF_PLATES) {
-            onFinish()
-        } else{
+            findNavController().navigate(R.id.action_loopVersusFragment_to_resultsVersusFragment)
+        } else {
             sharedViewModel.getNextPlate()
             updatePlateOnScreen()
         }

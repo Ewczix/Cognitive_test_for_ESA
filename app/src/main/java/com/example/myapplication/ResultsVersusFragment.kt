@@ -18,7 +18,7 @@ class ResultsVersusFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {  }
+        arguments?.let {}
 
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             findNavController().navigate(R.id.action_resultsVersusFragment_to_chooseModeFragment)

@@ -34,7 +34,7 @@ class LeaderboardFragment : Fragment() {
         _binding = FragmentLeaderboardBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        //viewModel.updateLeaderboard()
+        viewModel.updateLeaderboard()
         binding.recyclerView.adapter = LeaderboardAdapter()
         return binding.root
     }

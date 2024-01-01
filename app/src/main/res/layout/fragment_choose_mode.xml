@@ -68,7 +68,7 @@
             android:id="@+id/description_image"
             android:layout_width="match_parent"
             android:layout_height="172dp"
-            android:src="@drawable/brain" />
+            android:src="@drawable/rocket" />
 
         <TextView
             android:id="@+id/description_text"

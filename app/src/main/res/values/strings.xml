@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Cognitive tests for astronaut recruitment process</string>
     <string name="start">Start</string>
-    <string name="test">Test</string>
-    <string name="versus">Versus</string>
+    <string name="test">Trial</string>
+    <string name="versus">Time</string>
     <string name="return_button">Return</string>
     <string name="submit">Submit</string>
     <string name="choose_mode">Choose mode</string>

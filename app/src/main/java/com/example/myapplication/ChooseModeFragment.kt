@@ -57,7 +57,7 @@ class ChooseModeFragment : Fragment() {
         }
         else
         {
-            _binding!!.descriptionImage.setImageResource(R.drawable.brain)
+            _binding!!.descriptionImage.setImageResource(R.drawable.rocket)
             _binding!!.descriptionText.setText(R.string.test_description)
         }
     }

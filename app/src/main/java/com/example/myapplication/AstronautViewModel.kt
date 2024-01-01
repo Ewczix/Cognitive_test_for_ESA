@@ -9,6 +9,7 @@ import com.example.myapplication.data.AstronautTest
 import com.example.myapplication.data.Datasource
 import com.example.myapplication.data.answerMeaning
 import com.example.myapplication.databinding.FragmentLoopVersusBinding
+import com.example.myapplication.network.LeaderboardApi
 //import com.example.myapplication.network.LeaderboardApi
 import com.example.myapplication.network.LeaderboardScore
 import com.example.myapplication.network.ResponseScore
@@ -119,15 +120,14 @@ class AstronautViewModel : ViewModel() {
         _displayedName.value = name
     }
 
-  //  fun updateLeaderboard() {
-   //     viewModelScope.launch {
-     //       val response = LearboardApi.retrofitService.addRecord(ResponseScore(_displayedName.value.toString(), _currentScore.value!!.toFloat()))
-
-     //       if(response.isSuccessful) {
-      //          _scores.value = LeaderboardApi.retrofitService.getLeaderboard()
-      //      } else {
-       //         _scores.value = listOf()
-       //     }
-     //   }
-   // }
+    fun updateLeaderboard() {
+        viewModelScope.launch {
+            val response = LeaderboardApi.retrofitService.addRecord(ResponseScore(_displayedName.value.toString(), _currentScore.value!!.toFloat()))
+            if(response.isSuccessful) {
+                _scores.value = LeaderboardApi.retrofitService.getLeaderboard()
+            } else {
+                _scores.value = listOf()
+            }
+        }
+    }
 }
